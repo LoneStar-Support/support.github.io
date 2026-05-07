@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feelings wheel</title>
+  <meta name="description" content="Spinnable feelings wheel for naming emotions. Educational resource.">
+  <style type="text/css" media="screen">
+    p, h1, label {
+      font-family: Arial, sans-serif;
+      font-size: 0.5em;
+      color: #999;
+      text-align: center;
+    }
+
+    a {
+      color: #666;
+    }
+
+    div.graphic {
+      margin: 0 auto;
+      max-width: 1000px;
+      z-index: 0;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h1.feeling-title {
+      font-size: 1rem;
+      line-height: 1.5rem;
+      font-weight: normal;
+      color: #232323;
+    }
+
+    #wheelGraphic {
+      touch-action: none;
+      user-select: none;
+      -webkit-user-drag: none;
+      transform-origin: center center;
+      will-change: transform;
+    }
+  </style>
+  <link rel="stylesheet" type="text/css" href="./toggle-styles.css">
+</head>
+<body>
+  <div class="graphic">
+    <img src="./feelings-wheel-new-2.webp" alt="Feelings wheel with emotion labels arranged in a circle. Drag to rotate." id="wheelGraphic">
+  </div>
+
+  <div class="toggleContainer">
+    <div class="can-toggle">
+      <input id="feelings-color-toggle" type="checkbox" name="toggleSwitch" checked>
+      <label for="feelings-color-toggle">
+        <div class="can-toggle__label-text">Select color scheme</div>
+        <div class="can-toggle__switch" data-checked="New" data-unchecked="Original"></div>
+      </label>
+    </div>
+
+    <p>
+      Borrowed (without permission) from
+      <a href="http://imgur.com/tCWChf6" target="_blank" rel="noopener noreferrer">Geoffrey Roberts</a>.
+      Thanks to Lily Smith for adding rotation. Source page:
+      <a href="https://feelingswheel.com/" target="_blank" rel="noopener noreferrer">feelingswheel.com</a>.
+    </p>
+  </div>
+
+  <p class="feeling-title">
+    Educational tool only — not a substitute for professional support.
+  </p>
+
+  <script src="./wheel.js"></script>
+</body>
+</html>

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tools — LoneStar Support</title>
+  <meta name="description" content="Practical, self-paced tools from LoneStar Support—breathing rhythm guide and an interactive feelings wheel for reflection.">
+  <meta name="theme-color" content="#001F3F">
+
+  <meta property="og:title" content="Tools — LoneStar Support">
+  <meta property="og:description" content="Helpful tools for regulation and reflection—offered as educational resources alongside our coaching mission.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR-GITHUB-USERNAME.github.io/support.github.io/tools.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=1200&q=80&auto=format&fit=crop">
+  <meta property="og:image:alt" content="Person in a calm, reflective posture suggesting mindful breathing.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="css/site.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: "#001F3F",
+            sage: "#A8CABA",
+            terracotta: "#C8102E",
+            cream: "#F8F1E9",
+            ink: "#1F2937",
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Times New Roman', 'Times', 'serif'],
+            sans: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Analytics: replace G-XXXXXXXXXX with your measurement ID. -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+</head>
+<body class="min-h-screen bg-cream text-ink antialiased">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="site-nav" aria-busy="true"></div>
+
+  <main id="main-content">
+    <header class="bg-navy pb-14 pt-12 text-cream sm:pt-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h1 class="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">Tools for the in-between moments</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-cream/85">These resources are here when you want something practical to try on your own—alongside coaching, not instead of it. <strong class="font-semibold text-cream">The tools below are educational only; they are not medical advice or therapy.</strong></p>
+      </div>
+    </header>
+
+    <section class="relative -mt-8 pb-16 pt-2 sm:pb-20">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <div class="tools-tabs rounded-2xl border border-navy/10 bg-white p-5 shadow-sm sm:p-8">
+          <div
+            class="flex flex-wrap gap-2 border-b border-navy/10 pb-3"
+            role="tablist"
+            aria-label="LoneStar Support tools"
+          >
+            <button
+              type="button"
+              class="rounded-full bg-navy px-4 py-2 text-sm font-semibold text-cream shadow-sm transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              role="tab"
+              id="tools-tab-breath"
+              aria-selected="true"
+              aria-controls="tools-panel-breath"
+              tabindex="0">Breath</button>
+            <button
+              type="button"
+              class="rounded-full bg-cream px-4 py-2 text-sm font-semibold text-ink/70 ring-1 ring-navy/10 transition hover:bg-sage/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
+              role="tab"
+              id="tools-tab-feelings"
+              aria-selected="false"
+              aria-controls="tools-panel-feelings"
+              tabindex="-1">Feelings wheel</button>
+          </div>
+
+          <div
+            class="mt-6"
+            id="tools-panel-breath"
+            role="tabpanel"
+            aria-labelledby="tools-tab-breath"
+          >
+            <iframe
+              src="assets/breath/index.html"
+              title="Breathing rhythm circle and templates"
+              class="block w-full min-h-[70vh] rounded-lg border-0 md:min-h-[80vh]"
+              loading="lazy"
+            ></iframe>
+          </div>
+
+          <div
+            class="mt-6"
+            id="tools-panel-feelings"
+            role="tabpanel"
+            aria-labelledby="tools-tab-feelings"
+            hidden
+          >
+            <iframe
+              src="assets/feelings-wheel/index.html"
+              title="Interactive feelings wheel—drag or scroll to rotate"
+              class="block w-full min-h-[70vh] rounded-lg border-0 md:min-h-[80vh]"
+              loading="lazy"
+            ></iframe>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer" aria-busy="true"></div>
+
+  <script src="assets/js/includes.js" defer></script>
+  <script>
+    (function () {
+      var order = ['breath', 'feelings'];
+      var tabs = [
+        document.getElementById('tools-tab-breath'),
+        document.getElementById('tools-tab-feelings')
+      ];
+      var panels = {
+        breath: document.getElementById('tools-panel-breath'),
+        feelings: document.getElementById('tools-panel-feelings')
+      };
+      var activeClass =
+        'rounded-full bg-navy px-4 py-2 text-sm font-semibold text-cream shadow-sm transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta';
+      var inactiveClass =
+        'rounded-full bg-cream px-4 py-2 text-sm font-semibold text-ink/70 ring-1 ring-navy/10 transition hover:bg-sage/20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta';
+
+      function select(id) {
+        order.forEach(function (key, i) {
+          var tab = tabs[i];
+          var panel = panels[key];
+          if (!tab || !panel) return;
+          var on = key === id;
+          tab.setAttribute('aria-selected', on ? 'true' : 'false');
+          tab.tabIndex = on ? 0 : -1;
+          tab.className = on ? activeClass : inactiveClass;
+          panel.hidden = !on;
+        });
+      }
+
+      tabs.forEach(function (tab, i) {
+        if (!tab) return;
+        tab.addEventListener('click', function () {
+          select(order[i]);
+        });
+        tab.addEventListener('keydown', function (e) {
+          var idx = i;
+          if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+            e.preventDefault();
+            var next = (idx + 1) % order.length;
+            select(order[next]);
+            tabs[next].focus();
+          } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+            e.preventDefault();
+            var prev = (idx - 1 + order.length) % order.length;
+            select(order[prev]);
+            tabs[prev].focus();
+          } else if (e.key === 'Home') {
+            e.preventDefault();
+            select(order[0]);
+            tabs[0].focus();
+          } else if (e.key === 'End') {
+            e.preventDefault();
+            select(order[order.length - 1]);
+            tabs[order.length - 1].focus();
+          }
+        });
+      });
+
+      select('breath');
+    })();
+  </script>
+</body>
+</html>

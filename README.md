@@ -46,10 +46,12 @@ Replace placeholders in each HTML `<title>`, meta description, and `og:url` with
 
 ## File map
 
-- Pages: `index.html`, `about.html`, `impact.html`, `volunteers.html`, `stories.html`, `donate.html`, `contact.html`, `404.html`; `partials-preview.html` (dev shell for navbar/footer only)
+- Pages: `index.html`, `about.html`, `impact.html`, `volunteers.html`, `stories.html`, `tools.html`, `donate.html`, `contact.html`, `404.html`; `partials-preview.html` (dev shell for navbar/footer only)
 - Shared fragments: `partials/navbar.html`, `partials/footer.html`
 - JS: `assets/js/includes.js` (loads partials + mobile menu)
 - CSS: `css/site.css` (tokens, smooth scroll, skip link, light motion)
+- Vendored embed: `assets/breath/` (`index.html`, `app.js`, `patterns.js`, `styles.css`) — breathing UI adapted from [breath4me.github.io](https://github.com/ButterflyGroup/breath4me.github.io) (no service worker). Update this bundle manually when you want to stay in sync with upstream behavior.
+- Vendored embed: `assets/feelings-wheel/` (`index.html`, `wheel.js`, `toggle-styles.css`, wheel images) — spinnable wheel adapted from [feelingswheel.com](https://feelingswheel.com/) (see on-page attribution to Geoffrey Roberts and Lily Smith). This copy omits third-party analytics; port changes manually if you want to stay aligned with the live site.
 
 ## License / use
 
