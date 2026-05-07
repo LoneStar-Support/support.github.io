@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact — LoneStar Support</title>
+  <meta name="description" content="Contact LoneStar Support for coaching information, volunteering, partnerships, and media inquiries. We respond with care.">
+  <meta name="theme-color" content="#001F3F">
+
+  <meta property="og:title" content="Contact — LoneStar Support">
+  <meta property="og:description" content="Reach the LoneStar Support team—we’re here to help you take the next step.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://YOUR-GITHUB-USERNAME.github.io/support.github.io/contact.html">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=80&auto=format&fit=crop">
+  <meta property="og:image:alt" content="A vintage telephone on a wooden desk near a notebook.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="css/site.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: "#001F3F",
+            sage: "#A8CABA",
+            terracotta: "#C8102E",
+            cream: "#F8F1E9",
+            ink: "#1F2937",
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Times New Roman', 'Times', 'serif'],
+            sans: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <!-- Google Analytics: replace G-XXXXXXXXXX with your measurement ID. -->
+  <!--
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX');
+  </script>
+  -->
+</head>
+<body class="min-h-screen bg-cream text-ink antialiased">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="site-nav" aria-busy="true"></div>
+
+  <main id="main-content">
+    <header class="bg-navy pb-14 pt-12 text-cream sm:pt-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <h1 class="max-w-3xl font-serif text-4xl font-semibold leading-tight sm:text-5xl">Talk with us—no performance needed.</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-cream/85">Ask about coaching, volunteering, partnerships, or ways to give. If you’re in crisis, we’ll help you connect to local emergency resources—we’re relationship coaches, not a crisis hotline.</p>
+      </div>
+    </header>
+
+    <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-start">
+        <div>
+          <h2 class="font-serif text-2xl font-semibold text-navy">Send a message</h2>
+          <p class="mt-3 text-ink/80">This site is static, so the form below validates on your device and hands off to your email app. For production, replace the form action with a service like Formspree, Getform, or your CRM embed.</p>
+
+          <form id="contact-form" class="mt-8 space-y-5" action="#" method="post">
+            <div>
+              <label for="name" class="block text-sm font-semibold text-navy">Your name</label>
+              <input id="name" type="text" autocomplete="name" required class="mt-2 w-full rounded-lg border border-navy/15 bg-white px-3 py-2 text-ink shadow-sm focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/30" aria-required="true">
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-semibold text-navy">Email</label>
+              <input id="email" type="email" autocomplete="email" required class="mt-2 w-full rounded-lg border border-navy/15 bg-white px-3 py-2 text-ink shadow-sm focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/30" aria-required="true" placeholder="you@example.com">
+            </div>
+            <div>
+              <label for="topic" class="block text-sm font-semibold text-navy">I’m reaching out about</label>
+              <select id="topic" class="mt-2 w-full rounded-lg border border-navy/15 bg-white px-3 py-2 text-ink shadow-sm focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/30">
+                <option>Coaching for my family</option>
+                <option>Volunteering</option>
+                <option>Donations &amp; receipts</option>
+                <option>Partnership / media</option>
+                <option>Something else</option>
+              </select>
+            </div>
+            <div>
+              <label for="message" class="block text-sm font-semibold text-navy">Message</label>
+              <textarea id="message" rows="5" required class="mt-2 w-full rounded-lg border border-navy/15 bg-white px-3 py-2 text-ink shadow-sm focus:border-terracotta focus:outline-none focus:ring-2 focus:ring-terracotta/30" aria-required="true" placeholder="Share what feels important—no need to be brief if you’re not sure where to start."></textarea>
+            </div>
+
+            <p class="text-xs text-ink/65" id="form-help">We’ll open your email app with a pre-filled message. Replace <span class="font-mono">hello@lonestar.support</span> with your real inbox in this HTML file.</p>
+
+            <button type="submit" class="inline-flex items-center justify-center rounded-full bg-terracotta px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-terracotta/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">
+              Send with email app
+            </button>
+          </form>
+        </div>
+
+        <aside class="space-y-8">
+          <div class="overflow-hidden rounded-2xl ring-1 ring-navy/10 shadow-md">
+            <img src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1200&q=80&auto=format&fit=crop" width="1200" height="900" alt="A cozy desk with a telephone and open notebook, suggesting a thoughtful conversation." class="h-full w-full object-cover" loading="lazy" decoding="async">
+          </div>
+
+          <div class="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm">
+            <h3 class="font-serif text-xl font-semibold text-navy">Prefer the phone?</h3>
+            <p class="mt-2 text-sm text-ink/75">Main line: <a class="font-semibold text-terracotta underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" href="tel:+15123600599">(512) 360-0599</a></p>
+            <p class="mt-3 text-sm text-ink/70">Hours: Tuesday–Thursday, 9am–3pm Central Time</p>
+          </div>
+
+          <div class="rounded-2xl border border-sage/40 bg-sage/15 p-6">
+            <h3 class="font-serif text-xl font-semibold text-navy">If you need immediate help</h3>
+            <p class="mt-2 text-sm text-ink/75">If you or someone you love is in danger, call <strong>911</strong>. For mental health support, you can contact the <strong>988</strong> Suicide &amp; Crisis Lifeline (US).</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer" aria-busy="true"></div>
+
+  <script src="assets/js/includes.js" defer></script>
+  <script>
+    (function () {
+      var form = document.getElementById("contact-form");
+      if (!form) return;
+
+      form.addEventListener("submit", function (e) {
+        var name = document.getElementById("name").value.trim();
+        var email = document.getElementById("email").value.trim();
+        var topic = document.getElementById("topic");
+        var subject = topic.options[topic.selectedIndex].text;
+        var message = document.getElementById("message").value.trim();
+
+        if (!name || !email || !message) {
+          e.preventDefault();
+          return;
+        }
+
+        e.preventDefault();
+        var lines = [
+          "Name: " + name,
+          "Email: " + email,
+          "",
+          "Topic: " + subject,
+          "",
+          message
+        ];
+        var href =
+          "mailto:hello@lonestar.support?subject=" +
+          encodeURIComponent("LoneStar Support: " + subject) +
+          "&body=" +
+          encodeURIComponent(lines.join("\n"));
+        window.location.href = href;
+      });
+
+      var params = new URLSearchParams(window.location.search);
+      if (params.get("topic") === "volunteer") {
+        var topicSelect = document.getElementById("topic");
+        for (var i = 0; i < topicSelect.options.length; i++) {
+          if (topicSelect.options[i].text.indexOf("Volunteer") !== -1) {
+            topicSelect.selectedIndex = i;
+            break;
+          }
+        }
+      }
+    })();
+  </script>
+</body>
+</html>
