@@ -7,19 +7,12 @@
       name="description"
       content="Custom breathing rhythm on a circle: build inhale, hold, and exhale phases, try presets (box, 4-7-8, and more), session timer, and share your pattern via URL."
     />
-    <title>Breathed with Daniel</title>
+    <title>Breath</title>
     <link rel="stylesheet" href="./styles.css" />
     <meta name="theme-color" content="#171b24" />
   </head>
   <body>
     <div class="app">
-      <header class="header">
-        <h1 id="header-site-title" class="site-title">Breathed with Daniel</h1>
-        <p class="tagline">
-          Custom breathing rhythm on a circle. One full lap is one cycle.
-        </p>
-      </header>
-
       <main class="main">
         <div class="main-viz-stack">
         <section
@@ -252,81 +245,89 @@
           </section>
 
           <section class="pattern-panel" aria-label="Pattern builder">
-            <div class="pattern-panel-body">
-              <div class="segments-head">
-                <h2>Pattern</h2>
-                <button type="button" id="btn-add-segment" class="btn small">
-                  Add segment
-                </button>
-              </div>
+            <details class="pattern-details" aria-labelledby="pattern-heading">
+              <summary class="pattern-summary">
+                <h2 id="pattern-heading" class="templates-panel-title">
+                  Pattern
+                </h2>
+              </summary>
+              <div class="pattern-details-inner">
+                <div class="pattern-panel-body">
+                  <div class="segments-head">
+                    <button type="button" id="btn-add-segment" class="btn small">
+                      Add segment
+                    </button>
+                  </div>
 
-              <ul id="segment-list" class="segment-list"></ul>
-            </div>
+                  <ul id="segment-list" class="segment-list"></ul>
+                </div>
 
-            <div class="pattern-panel-title-field">
-              <input
-                type="text"
-                id="session-title"
-                class="session-title-input pattern-panel-session-title-input"
-                maxlength="80"
-                spellcheck="true"
-                placeholder="Title of the pattern..."
-                aria-label="Pattern title"
-                aria-describedby="session-title-edit-hint"
-              />
-              <p id="session-title-edit-hint" class="editable-field-hint">
-                click to edit title
-              </p>
-            </div>
+                <div class="pattern-panel-title-field">
+                  <input
+                    type="text"
+                    id="session-title"
+                    class="session-title-input pattern-panel-session-title-input"
+                    maxlength="80"
+                    spellcheck="true"
+                    placeholder="Title of the pattern..."
+                    aria-label="Pattern title"
+                    aria-describedby="session-title-edit-hint"
+                  />
+                  <p id="session-title-edit-hint" class="editable-field-hint">
+                    click to edit title
+                  </p>
+                </div>
 
-            <section
-              class="share-panel"
-              aria-labelledby="pattern-details-heading"
-            >
-              <h2
-                id="pattern-details-heading"
-                class="share-panel-title visually-hidden"
-              >
-                <label
-                  class="share-panel-heading-label"
-                  for="share-description"
+                <section
+                  class="share-panel"
+                  aria-labelledby="pattern-details-heading"
                 >
-                  Pattern Details
-                </label>
-              </h2>
-              <textarea
-                id="share-description"
-                class="share-panel-textarea"
-                name="share-description"
-                rows="1"
-                maxlength="800"
-                aria-labelledby="pattern-details-heading"
-                aria-describedby="share-description-edit-hint"
-                spellcheck="true"
-                placeholder="Description of the pattern..."
-              ></textarea>
-              <p id="share-description-edit-hint" class="editable-field-hint">
-                click to edit description
-              </p>
-            </section>
+                  <h2
+                    id="pattern-details-heading"
+                    class="share-panel-title visually-hidden"
+                  >
+                    <label
+                      class="share-panel-heading-label"
+                      for="share-description"
+                    >
+                      Pattern Details
+                    </label>
+                  </h2>
+                  <textarea
+                    id="share-description"
+                    class="share-panel-textarea"
+                    name="share-description"
+                    rows="1"
+                    maxlength="800"
+                    aria-labelledby="pattern-details-heading"
+                    aria-describedby="share-description-edit-hint"
+                    spellcheck="true"
+                    placeholder="Description of the pattern..."
+                  ></textarea>
+                  <p id="share-description-edit-hint" class="editable-field-hint">
+                    click to edit description
+                  </p>
+                </section>
 
-            <div
-              class="transport"
-              role="group"
-              aria-label="Sharing and reset"
-            >
-              <button type="button" id="btn-reset-pattern" class="btn">
-                Reset
-              </button>
-              <button
-                type="button"
-                id="btn-copy-link"
-                class="btn btn-copy-link"
-                aria-label="Copy breathing pattern URL"
-              >
-                Copy link
-              </button>
-            </div>
+                <div
+                  class="transport"
+                  role="group"
+                  aria-label="Sharing and reset"
+                >
+                  <button type="button" id="btn-reset-pattern" class="btn">
+                    Reset
+                  </button>
+                  <button
+                    type="button"
+                    id="btn-copy-link"
+                    class="btn btn-copy-link"
+                    aria-label="Copy breathing pattern URL"
+                  >
+                    Copy link
+                  </button>
+                </div>
+              </div>
+            </details>
           </section>
         </div>
       </main>

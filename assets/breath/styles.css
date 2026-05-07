@@ -661,12 +661,14 @@ body {
   min-width: 0;
 }
 
-.templates-details {
+.templates-details,
+.pattern-details {
   margin: 0;
   min-width: 0;
 }
 
-.templates-summary {
+.templates-summary,
+.pattern-summary {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -676,16 +678,19 @@ body {
   color: var(--text);
 }
 
-.templates-summary::-webkit-details-marker {
+.templates-summary::-webkit-details-marker,
+.pattern-summary::-webkit-details-marker {
   display: none;
 }
 
-.templates-summary::marker {
+.templates-summary::marker,
+.pattern-summary::marker {
   content: '';
 }
 
 /* Chevron mirrors .segment-cues-summary affordance */
-.templates-summary::after {
+.templates-summary::after,
+.pattern-summary::after {
   content: '';
   flex-shrink: 0;
   width: 0.35em;
@@ -697,11 +702,13 @@ body {
   transition: transform 0.15s ease;
 }
 
-.templates-details[open] > .templates-summary::after {
+.templates-details[open] > .templates-summary::after,
+.pattern-details[open] > .pattern-summary::after {
   transform: translateY(0.08em) rotate(45deg);
 }
 
-.templates-summary:focus-visible {
+.templates-summary:focus-visible,
+.pattern-summary:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
   border-radius: 10px;
@@ -711,7 +718,12 @@ body {
   margin: 0;
 }
 
-.templates-details-inner {
+.pattern-summary .templates-panel-title {
+  margin: 0;
+}
+
+.templates-details-inner,
+.pattern-details-inner {
   margin-top: 0.65rem;
   padding-top: 0.65rem;
   border-top: 1px solid var(--border);
@@ -769,7 +781,7 @@ body {
   margin-top: 1rem;
 }
 
-.pattern-panel > .share-panel {
+.pattern-panel .share-panel {
   margin-top: 1rem;
   padding: 0;
   padding-top: 0.85rem;
@@ -780,7 +792,7 @@ body {
   min-width: 0;
 }
 
-.pattern-panel > .share-panel .share-panel-title {
+.pattern-panel .share-panel .share-panel-title {
   text-align: start;
 }
 
@@ -808,7 +820,7 @@ body {
   margin: 0;
 }
 
-.pattern-panel > .transport {
+.pattern-panel .transport {
   margin-top: 1rem;
   margin-bottom: 0;
 }
@@ -816,7 +828,7 @@ body {
 .segments-head {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
   gap: 0.75rem;
 }
 

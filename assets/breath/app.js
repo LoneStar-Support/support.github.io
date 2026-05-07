@@ -14,7 +14,7 @@ import { PATTERN_TEMPLATES } from './patterns.js';
   const URL_PAYLOAD_WARN_LENGTH = 2000;
   const SEGMENT_LABEL_MAX_LEN = 40;
   const SHARE_NOTE_MAX_LEN = 800;
-  const DEFAULT_PAGE_TITLE = 'Breathed with Daniel';
+  const DEFAULT_PAGE_TITLE = 'Breath';
   const SESSION_TITLE_MAX_LEN = 80;
 
   const COPY_BTN_LABEL_DEFAULT = 'Copy link';
