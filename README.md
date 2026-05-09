@@ -34,6 +34,33 @@ Alternatives: `npx serve .` or any static file server you prefer.
 
 Replace placeholders in each HTML `<title>`, meta description, and `og:url` with your real domain or GitHub Pages URL.
 
+### Production site URL (`SITE_ORIGIN`)
+
+Use one canonical base URL everywhere crawlers and social platforms resolve links:
+
+- **`https://YOUR-ORG.github.io/support.github.io`** for a **project** site (this repo name), or your custom domain if you add one.
+- Search and replace `YOUR-GITHUB-USERNAME` (and this path) in:
+  - Every page’s `og:url`, `og:image`, `twitter:image`, and `link rel="canonical"` where present
+  - [`sitemap.xml`](sitemap.xml) (`<loc>` entries)
+  - [`robots.txt`](robots.txt) (`Sitemap:` line)
+
+### SEO and sharing checklist (new or updated landing pages)
+
+When you add a full HTML page that should be indexed:
+
+1. **Unique** `<title>` (e.g. `Page — LoneStar Support`).
+2. **Unique** `<meta name="description">` (one clear sentence).
+3. **Open Graph:** `og:title`, `og:description`, `og:type` (`website`), `og:url` (absolute), `og:image` + `og:image:alt`; add `og:image:width` / `og:image:height` if using a fixed card (see [`tools.html`](tools.html) and [`assets/images/og/tools-feelings-wheel.jpg`](assets/images/og/tools-feelings-wheel.jpg)).
+4. **Twitter:** `twitter:card` (`summary_large_image` for large images), `twitter:title`, `twitter:description`, `twitter:image` (match `og:image`).
+5. Optional: `og:site_name`, `og:locale`, `link rel="canonical"`.
+6. Add the page URL to [`sitemap.xml`](sitemap.xml). Do not list `404.html`, `partials-preview.html`, or partial fragments.
+
+**Tools preview image:** [`assets/images/og/tools-feelings-wheel.jpg`](assets/images/og/tools-feelings-wheel.jpg) is a 1200×630 JPEG composed from the vendored feelings wheel artwork for Open Graph / Twitter previews on [`tools.html`](tools.html). Regenerate it if you change the wheel design (see plan: resize wheel on cream background).
+
+### Verification
+
+After deploy, use [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/) and your platform’s card validator on `tools.html`. Confirm [`/sitemap.xml`](sitemap.xml) and [`/robots.txt`](robots.txt) return 200.
+
 ## Customize before launch
 
 - Add your **EIN** wherever the site shows “EIN:” (hero on the home page, footer, about, donate trust strip).
@@ -47,6 +74,7 @@ Replace placeholders in each HTML `<title>`, meta description, and `og:url` with
 ## File map
 
 - Pages: `index.html`, `about.html`, `impact.html`, `volunteers.html`, `stories.html`, `tools.html`, `donate.html`, `contact.html`, `404.html`; `partials-preview.html` (dev shell for navbar/footer only)
+- SEO: `sitemap.xml`, `robots.txt`, `assets/images/og/tools-feelings-wheel.jpg` (Open Graph / Twitter image for Tools)
 - Shared fragments: `partials/navbar.html`, `partials/footer.html`
 - JS: `assets/js/includes.js` (loads partials + mobile menu)
 - CSS: `css/site.css` (tokens, smooth scroll, skip link, light motion)
