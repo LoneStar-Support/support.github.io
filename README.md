@@ -71,15 +71,27 @@ After deploy, use [Facebook Sharing Debugger](https://developers.facebook.com/to
 - **Home photo strip:** images live in `assets/images/autism-hugging/` as `autism-hugging-1.jpg` … `autism-hugging-18.jpg` (duplicated in both rows in `index.html` for the infinite scroll—keep both rows in sync if you add or remove photos).
 - Change **contact email** and phone in `contact.html` (mailto + visible text).
 
+## Legal pages (REVIEW BEFORE PUBLIC LAUNCH)
+
+[`privacy.html`](privacy.html), [`terms.html`](terms.html), and [`accessibility.html`](accessibility.html) are AI-drafted **starter text** in LoneStar's voice. They are deliberately conservative, but they are **not** a substitute for attorney review:
+
+- Have a Texas nonprofit attorney review `privacy.html` and `terms.html` before launch. The State Bar of Texas's [Texas C-BAR](https://www.texasbar.com/AM/Template.cfm?Section=Texas_C_BAR) program offers free or reduced-cost reviews for 501(c)(3) organizations.
+- Both pages carry a `<!-- TODO(legal-review) -->` comment marking them as drafts.
+- The Tools page ([`tools.html`](tools.html)) carries a single visible safety banner replacing the previously-hidden tool-level disclaimers in `assets/breath/`, `assets/feelings-wheel/`, and `assets/agree4me/`.
+- The Donate page ([`donate.html`](donate.html)) carries a Stripe/IRS-aligned disclosure block (entity, "no goods or services", refund/cancellation policy) directly below the `#donation-embed-region` Stripe placeholder.
+- Footer legal links live in [`partials/footer.html`](partials/footer.html) as a middle segment of the existing copyright row.
+- Once GA is enabled in [`assets/js/includes.js`](assets/js/includes.js), revisit the Privacy Policy's cookie/tracking section and add a visible cookie disclosure if your visitor mix includes EU/UK or California residents.
+
 ## File map
 
-- Pages: `index.html`, `about.html`, `impact.html`, `volunteers.html`, `stories.html`, `tools.html`, `donate.html`, `contact.html`, `404.html`; `partials-preview.html` (dev shell for navbar/footer only)
+- Pages: `index.html`, `about.html`, `impact.html`, `volunteers.html`, `stories.html`, `tools.html`, `donate.html`, `contact.html`, `privacy.html`, `terms.html`, `accessibility.html`, `404.html`; `partials-preview.html` (dev shell for navbar/footer only)
 - SEO: `sitemap.xml`, `robots.txt`, `assets/images/og/tools-feelings-wheel.jpg` (Open Graph / Twitter image for Tools)
 - Shared fragments: `partials/navbar.html`, `partials/footer.html`
 - JS: `assets/js/includes.js` (loads partials + mobile menu)
 - CSS: `css/site.css` (tokens, smooth scroll, skip link, light motion)
 - Vendored embed: `assets/breath/` (`index.html`, `app.js`, `patterns.js`, `styles.css`) — breathing UI adapted from [breath4me.github.io](https://github.com/ButterflyGroup/breath4me.github.io) (no service worker). Update this bundle manually when you want to stay in sync with upstream behavior.
 - Vendored embed: `assets/feelings-wheel/` (`index.html`, `wheel.js`, `toggle-styles.css`, wheel images) — spinnable wheel adapted from [feelingswheel.com](https://feelingswheel.com/) (see on-page attribution to Geoffrey Roberts and Lily Smith). This copy omits third-party analytics; port changes manually if you want to stay aligned with the live site.
+- Vendored embed: `assets/agree4me/` (`index.html`, `script.js`, `styles.css`, `apple-touch-icon.png`, plus bundled `signature_pad.umd.min.js` and `html2pdf.bundle.min.js` with sidecar LICENSE) — Belief Agreement Generator adapted from [agree4me.com](https://agree4me.com/). This copy bundles its third-party libraries locally (zero CDN calls at runtime) and omits the upstream PWA manifest, JSON-LD schema, theme-color, and standalone OG metadata. Update this bundle manually when you want to stay aligned with upstream behavior.
 
 ## License / use
 

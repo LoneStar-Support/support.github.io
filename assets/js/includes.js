@@ -1,8 +1,29 @@
 (function () {
   "use strict";
 
+  // TODO(GA): set GA_MEASUREMENT_ID to your "G-XXXXXXX" id when you have one.
+  // While null, no Google Analytics scripts are loaded on any page.
+  var GA_MEASUREMENT_ID = null;
+
   var NAV_PARTIAL = "partials/navbar.html";
   var FOOTER_PARTIAL = "partials/footer.html";
+
+  function initAnalytics() {
+    if (!GA_MEASUREMENT_ID) {
+      return;
+    }
+    var loader = document.createElement("script");
+    loader.async = true;
+    loader.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_MEASUREMENT_ID);
+    document.head.appendChild(loader);
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      window.dataLayer.push(arguments);
+    }
+    window.gtag = gtag;
+    gtag("js", new Date());
+    gtag("config", GA_MEASUREMENT_ID);
+  }
 
   function resolvePartialPath(path) {
     var pathname = window.location.pathname || "/";
@@ -80,7 +101,7 @@
 
     if (isDesktop()) {
       menu.classList.remove("hidden");
-      menu.classList.remove("flex", "flex-col");
+      menu.classList.remove("grid");
       toggle.setAttribute("aria-expanded", "false");
       toggle.setAttribute("aria-label", "Open menu");
       setToggleIcons(toggle, false);
@@ -90,10 +111,10 @@
     var expanded = toggle.getAttribute("aria-expanded") === "true";
     if (expanded) {
       menu.classList.remove("hidden");
-      menu.classList.add("flex", "flex-col");
+      menu.classList.add("grid");
     } else {
       menu.classList.add("hidden");
-      menu.classList.remove("flex", "flex-col");
+      menu.classList.remove("grid");
     }
     toggle.setAttribute("aria-label", expanded ? "Close menu" : "Open menu");
     setToggleIcons(toggle, expanded);
@@ -153,5 +174,6 @@
     injectPartial("site-nav", navUrl);
     injectPartial("site-footer", footerUrl);
     setYear();
+    initAnalytics();
   });
 })();

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Belief Agreement generator: write what you like, what you don't, and what you agree to, then sign and share. Educational tool only."
+    />
+    <title>Belief Agreement Generator</title>
+
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23397cff'/%3E%3Cpath d='M18 33l9 9 19-19' stroke='white' stroke-width='6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#agreement">Skip to form</a>
+
+    <header class="page-header">
+      <h1>Belief Agreement Generator</h1>
+      <p class="help">
+        Write down what you like, what you don't, and what you agree to. Sign
+        at the bottom, then print, save as PDF, or share a link to the same
+        form. Free, private, and printable &mdash; everything stays in your
+        browser.
+      </p>
+    </header>
+
+    <main>
+      <form id="agreement" autocomplete="off" novalidate>
+        <section class="list-section" aria-labelledby="likes-heading">
+          <h2 id="likes-heading">I like</h2>
+          <ul
+            class="bullet-list"
+            data-section="likes"
+            aria-labelledby="likes-heading"
+          >
+            <li class="bullet-row">
+              <input
+                type="text"
+                aria-label="Something you like"
+                placeholder="Something you like"
+              />
+              <button
+                type="button"
+                class="remove-row no-print"
+                aria-label="Remove this item"
+              >
+                &times;
+              </button>
+            </li>
+          </ul>
+          <button type="button" class="add-row no-print" data-section="likes">
+            + Add another
+          </button>
+        </section>
+
+        <section class="list-section" aria-labelledby="dislikes-heading">
+          <h2 id="dislikes-heading">I don't like</h2>
+          <ul
+            class="bullet-list"
+            data-section="dislikes"
+            aria-labelledby="dislikes-heading"
+          >
+            <li class="bullet-row">
+              <input
+                type="text"
+                aria-label="Something you don't like"
+                placeholder="Something you don't like"
+              />
+              <button
+                type="button"
+                class="remove-row no-print"
+                aria-label="Remove this item"
+              >
+                &times;
+              </button>
+            </li>
+          </ul>
+          <button
+            type="button"
+            class="add-row no-print"
+            data-section="dislikes"
+          >
+            + Add another
+          </button>
+        </section>
+
+        <section class="list-section" aria-labelledby="agrees-heading">
+          <h2 id="agrees-heading">I agree</h2>
+          <ul
+            class="bullet-list"
+            data-section="agrees"
+            aria-labelledby="agrees-heading"
+          >
+            <li class="bullet-row">
+              <input
+                type="text"
+                aria-label="Something you agree to"
+                placeholder="Something you agree to"
+              />
+              <button
+                type="button"
+                class="remove-row no-print"
+                aria-label="Remove this item"
+              >
+                &times;
+              </button>
+            </li>
+          </ul>
+          <button type="button" class="add-row no-print" data-section="agrees">
+            + Add another
+          </button>
+        </section>
+
+        <section class="signature-section" aria-labelledby="signature-heading">
+          <h2 id="signature-heading">Signature</h2>
+          <div class="signature-frame">
+            <canvas
+              id="signature-pad"
+              role="img"
+              aria-label="Signature drawing area. Use a pointer or finger to draw your signature."
+            ></canvas>
+            <span class="signature-line" aria-hidden="true"></span>
+          </div>
+          <div class="signature-actions no-print">
+            <button type="button" id="clear-signature" class="ghost-button">
+              Clear signature
+            </button>
+            <p class="hint">Draw with mouse, finger, or stylus.</p>
+            <button
+              type="button"
+              id="toggle-identity"
+              class="toggle-button"
+              aria-pressed="false"
+              aria-controls="identity-fields"
+            >
+              <span class="toggle-indicator" aria-hidden="true"></span>
+              <span class="toggle-label">Add printed name and date</span>
+            </button>
+          </div>
+          <div id="identity-fields" class="identity-fields no-print" hidden>
+            <label class="field">
+              <span>Printed name</span>
+              <input type="text" id="printed-name" autocomplete="name" />
+            </label>
+            <label class="field">
+              <span>Date</span>
+              <input type="date" id="signed-date" />
+            </label>
+          </div>
+        </section>
+
+        <div class="actions no-print" role="group" aria-label="Document actions">
+          <button type="button" id="share-button" class="secondary-button">
+            Copy share link
+          </button>
+          <button type="button" id="reset-button" class="ghost-button">
+            Reset form
+          </button>
+          <button type="button" id="print-button" class="primary-button">
+            Print
+          </button>
+          <button type="button" id="pdf-button" class="primary-button">
+            Download PDF
+          </button>
+        </div>
+      </form>
+
+      <div id="print-view" class="print-view" aria-hidden="true"></div>
+    </main>
+
+    <div
+      id="toast"
+      class="toast no-print"
+      role="status"
+      aria-live="polite"
+      hidden
+    ></div>
+
+    <footer class="no-print" hidden style="max-width: 60ch; margin: 1.5rem auto 3rem; padding: 0 1.25rem; text-align: center; font-size: 0.875rem; line-height: 1.5; color: var(--text-muted);">
+      <p style="margin: 0;">Educational tool only &mdash; not a legal contract or substitute for professional support.</p>
+    </footer>
+
+    <script src="./signature_pad.umd.min.js" defer></script>
+    <script src="./html2pdf.bundle.min.js" defer></script>
+    <script src="./script.js" defer></script>
+  </body>
+</html>

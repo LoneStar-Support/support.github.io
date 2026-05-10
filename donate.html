@@ -10,9 +10,10 @@
   <meta property="og:title" content="Donate — LoneStar Support">
   <meta property="og:description" content="Your gift fuels coaching, scholarships, volunteer training, and practical support for families raising children with special needs.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://YOUR-GITHUB-USERNAME.github.io/support.github.io/donate.html">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200&q=80&auto=format&fit=crop">
-  <meta property="og:image:alt" content="A group of people celebrating outdoors, smiling and cheering together in bright daylight.">
+  <meta property="og:url" content="https://lonestarsupport.org/donate.html">
+  <link rel="canonical" href="https://lonestarsupport.org/donate.html">
+  <meta property="og:image" content="https://lonestarsupport.org/assets/images/autism-hugging/autism-hugging-6.jpg">
+  <meta property="og:image:alt" content="A mother and father softly looking down at their young son, who wears noise-reducing headphones and holds a colorful sensory cube, in a peaceful backyard moment.">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" href="css/site.css">
@@ -36,17 +37,6 @@
       },
     };
   </script>
-
-  <!-- Google Analytics: replace G-XXXXXXXXXX with your measurement ID. -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
 </head>
 <body class="min-h-screen bg-cream text-ink antialiased">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -62,9 +52,10 @@
         <p class="mt-6 max-w-2xl text-lg leading-relaxed text-cream/85">LoneStar Support is a Texas <span class="whitespace-nowrap">501(c)(3)</span> nonprofit. Your donation funds coaching access, volunteer training, scholarships, and community gatherings—so caregivers can feel less alone and more connected. Donations are tax-deductible to the extent allowed by law.</p>
 
         <dl class="mt-10 grid gap-4 sm:grid-cols-3">
-          <div class="rounded-2xl border border-cream/15 bg-cream/5 p-4">
+          <!-- TODO(EIN): once issued, remove the `hidden` attribute on the card below and replace "TBD". -->
+          <div class="rounded-2xl border border-cream/15 bg-cream/5 p-4" hidden>
             <dt class="text-xs font-semibold uppercase tracking-wide text-cream/70"><abbr title="Employer Identification Number">EIN</abbr></dt>
-            <dd class="mt-1 font-mono text-sm text-cream"></dd>
+            <dd class="mt-1 font-mono text-sm text-cream" data-pending-ein>TBD</dd>
           </div>
           <div class="rounded-2xl border border-cream/15 bg-cream/5 p-4">
             <dt class="text-xs font-semibold uppercase tracking-wide text-cream/70">Where funds go</dt>
@@ -81,30 +72,37 @@
     <section class="mx-auto max-w-6xl px-4 py-14 sm:px-6 lg:px-8" aria-labelledby="donate-form-title">
       <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
         <div>
-          <h2 id="donate-form-title" class="font-serif text-3xl font-semibold text-navy">Give online</h2>
-          <p class="mt-3 text-ink/80">Monthly giving is the steadiest way to help us plan cohort—and to tell families you’re with them all year. When you’re ready, embed your Donorbox, GiveLively, or Stripe Checkout form in the box below.</p>
-
+          <h2 id="donate-form-title" class="text-center font-serif text-3xl font-semibold text-navy">Give online</h2>
+          <!-- TODO(donate-embed): replace the placeholder inside #donation-embed-region with the real Stripe Checkout embed (script + iframe or hosted-button snippet). -->
           <div class="mt-8 rounded-2xl border-2 border-dashed border-navy/20 bg-white p-6 shadow-sm">
-            <p class="text-sm font-semibold text-navy">Embedded donation form</p>
-            <p class="mt-2 text-sm text-ink/70">Replace this container with your provider’s embed code. Example Donorbox snippet:</p>
-            <pre class="mt-4 overflow-x-auto rounded-lg bg-navy/5 p-4 text-xs text-ink/80" tabindex="0"><code>&lt;script src="https://donorbox.org/widget.js" defer&gt;&lt;/script&gt;
-&lt;iframe src="https://donorbox.org/embed/your-campaign" name="donorbox" … title="Donate to LoneStar Support"&gt;&lt;/iframe&gt;</code></pre>
-            <div id="donation-embed-region" class="mt-6 rounded-xl bg-cream p-8 text-center text-sm text-ink/70" role="region" aria-label="Donation form embed">
-              <p class="font-semibold text-navy">Your donation form will appear here</p>
-              <p class="mt-2">Paste your secure iframe or hosted button embed above the fold for best conversion.</p>
+            <div id="donation-embed-region" class="rounded-xl bg-cream p-8 text-center text-sm text-ink/70" role="region" aria-label="Donation form embed">
+              <p class="font-semibold text-navy">Stripe Donation form</p>
             </div>
           </div>
+
+          <aside class="mt-6 rounded-2xl border border-navy/10 bg-white p-5 text-sm leading-relaxed text-ink/75 shadow-sm" aria-label="Donation disclosures">
+            <p>
+              LoneStar Support is a Texas <span class="whitespace-nowrap">501(c)(3)</span> nonprofit. <abbr title="Employer Identification Number">EIN</abbr>: <span data-pending-ein>TBD</span>. Donations are tax-deductible to the extent allowed by U.S. law. <strong>No goods or services were provided in exchange for your contribution.</strong>
+            </p>
+            <p class="mt-3">
+              <strong>Refunds and cancellations.</strong> If you make a one-time gift in error, contact <a class="font-semibold text-terracotta underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" href="mailto:help@lonestarsupport.org">help@lonestarsupport.org</a> within 30 days and we&rsquo;ll work with you on a refund. Recurring gifts can be cancelled at any time using the link in your Stripe receipt, or by emailing the same address.
+            </p>
+            <p class="mt-3">
+              See our <a class="font-semibold text-terracotta underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" href="privacy.html">Privacy Policy</a> for how donor information is handled.
+            </p>
+          </aside>
 
           <div class="mt-8 rounded-2xl border border-terracotta/25 bg-terracotta/10 p-6">
             <h3 class="font-serif text-xl font-semibold text-navy">Recurring gifts keep the lights on—and the love consistent</h3>
             <p class="mt-2 text-sm text-ink/80">A monthly gift of <strong>$25</strong> can help cover coaching resources; <strong>$100</strong> can help sponsor a session block for a family on a scholarship waitlist.</p>
-            <p class="mt-3 text-xs text-ink/65">Adjust these statements to match your real program economics.</p>
+            <!-- TODO(donate-impact): adjust the $25 / $100 examples in the paragraph above to match real program economics before launch. -->
+
           </div>
         </div>
 
         <div class="space-y-8">
-          <div class="overflow-hidden rounded-2xl ring-2 ring-sage/40 shadow-xl">
-            <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?w=1200&q=80&auto=format&fit=crop" width="1200" height="900" alt="A group of people celebrating outdoors, smiling and cheering together in bright daylight." class="h-full w-full object-cover" fetchpriority="high" decoding="async">
+          <div class="aspect-[4/3] overflow-hidden rounded-2xl ring-2 ring-sage/40 shadow-xl">
+            <img src="assets/images/autism-hugging/autism-hugging-6.jpg" width="784" height="1168" alt="A mother and father softly looking down at their young son, who wears noise-reducing headphones and holds a colorful sensory cube, in a peaceful backyard moment." class="h-full w-full object-cover" fetchpriority="high" decoding="async">
           </div>
 
           <figure class="rounded-2xl border border-navy/10 bg-white p-8 shadow-sm">
@@ -119,8 +117,8 @@
 
     <section class="border-y border-navy/10 bg-white py-16">
       <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div class="max-w-3xl">
-          <h2 class="font-serif text-3xl font-semibold text-navy sm:text-4xl">Giving levels that match your heart (and your budget)</h2>
+        <div class="mx-auto max-w-3xl text-center">
+          <h2 class="font-serif text-3xl font-semibold text-navy sm:text-4xl">Giving levels that match your heart<br>(and your budget)</h2>
           <p class="mt-3 text-ink/75">If your employer matches charitable gifts, you may be able to double your impact—ask your HR team for a matching gift form.</p>
         </div>
 
@@ -150,18 +148,19 @@
       </div>
     </section>
 
-    <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+    <section class="mx-auto max-w-6xl px-4 py-16 text-center sm:px-6 lg:px-8">
       <h2 class="font-serif text-3xl font-semibold text-navy">Trust, transparency, and gratitude</h2>
-      <div class="mt-8 grid gap-6 lg:grid-cols-3">
-        <div class="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm">
+      <div class="mt-8 flex flex-wrap justify-center gap-6">
+        <!-- TODO(financials): once annual report, board roster, and any independent review are publishable, fill in real links/copy below and remove the `hidden` attribute. -->
+        <div class="w-full rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:max-w-sm sm:basis-72" hidden>
           <h3 class="font-serif text-lg font-semibold text-navy">Financial integrity</h3>
           <p class="mt-2 text-sm text-ink/75">Publish your annual report, board list, and independent review (when available) from this section.</p>
         </div>
-        <div class="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm">
+        <div class="w-full rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:max-w-sm sm:basis-72">
           <h3 class="font-serif text-lg font-semibold text-navy">Privacy</h3>
           <p class="mt-2 text-sm text-ink/75">We protect participant stories. Donor information is used for receipts and updates—never sold.</p>
         </div>
-        <div class="rounded-2xl border border-navy/10 bg-white p-6 shadow-sm">
+        <div class="w-full rounded-2xl border border-navy/10 bg-white p-6 shadow-sm sm:max-w-sm sm:basis-72">
           <h3 class="font-serif text-lg font-semibold text-navy">Questions?</h3>
           <p class="mt-2 text-sm text-ink/75">Ask about planned giving, stock transfers, or donor-advised funds on our <a class="font-semibold text-terracotta underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" href="contact.html">contact page</a>.</p>
         </div>
@@ -174,9 +173,8 @@
           <div>
             <h2 class="font-serif text-3xl font-semibold sm:text-4xl">What donors have made possible</h2>
             <ul class="mt-6 space-y-3 text-cream/85">
-              <li class="flex gap-3"><span class="mt-1 text-sage" aria-hidden="true">✦</span><span>Hosted two volunteer training weekends with childcare scholarships.</span></li>
-              <li class="flex gap-3"><span class="mt-1 text-sage" aria-hidden="true">✦</span><span>Matched 38 families with coaches and follow-up care coordinators.</span></li>
-              <li class="flex gap-3"><span class="mt-1 text-sage" aria-hidden="true">✦</span><span>Launched a communication mini-course delivered by text (opt-in).</span></li>
+              <li class="flex gap-3"><span class="mt-1 text-sage" aria-hidden="true">✦</span><span>Hosted volunteer training weekends with childcare scholarships.</span></li>
+              <li class="flex gap-3"><span class="mt-1 text-sage" aria-hidden="true">✦</span><span>Matched families with coaches and follow-up care coordinators.</span></li>
             </ul>
           </div>
           <figure class="rounded-2xl border border-cream/15 bg-cream/5 p-8">
@@ -190,7 +188,7 @@
     </section>
 
     <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
-      <h2 class="font-serif text-3xl font-semibold text-navy">Donation FAQ</h2>
+      <h2 class="text-center font-serif text-3xl font-semibold text-navy">Donation FAQ</h2>
       <div class="mt-8 space-y-4">
         <details class="rounded-2xl border border-navy/10 bg-white p-5 shadow-sm">
           <summary class="cursor-pointer font-semibold text-navy focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">Will I receive a tax receipt?</summary>

@@ -4,24 +4,24 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tools — LoneStar Support</title>
-  <meta name="description" content="Practical, self-paced tools from LoneStar Support—breathing rhythm guide and an interactive feelings wheel for reflection.">
+  <meta name="description" content="Practical, self-paced tools from LoneStar Support—a breathing rhythm guide, an interactive feelings wheel, and a printable belief-agreement generator for couples and families.">
   <meta name="theme-color" content="#001F3F">
 
   <meta property="og:title" content="Tools — LoneStar Support">
-  <meta property="og:description" content="Practical, self-paced tools from LoneStar Support—breathing rhythm guide and an interactive feelings wheel for reflection.">
+  <meta property="og:description" content="Practical, self-paced tools from LoneStar Support—a breathing rhythm guide, an interactive feelings wheel, and a printable belief-agreement generator for couples and families.">
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="LoneStar Support">
   <meta property="og:locale" content="en_US">
-  <meta property="og:url" content="https://YOUR-GITHUB-USERNAME.github.io/support.github.io/tools.html">
-  <meta property="og:image" content="https://YOUR-GITHUB-USERNAME.github.io/support.github.io/assets/images/og/tools-feelings-wheel.jpg">
+  <meta property="og:url" content="https://lonestarsupport.org/tools.html">
+  <meta property="og:image" content="https://lonestarsupport.org/assets/images/og/tools-feelings-wheel.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Colorful feelings wheel with emotion labels arranged in a circle.">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Tools — LoneStar Support">
-  <meta name="twitter:description" content="Practical, self-paced tools from LoneStar Support—breathing rhythm guide and an interactive feelings wheel for reflection.">
-  <meta name="twitter:image" content="https://YOUR-GITHUB-USERNAME.github.io/support.github.io/assets/images/og/tools-feelings-wheel.jpg">
-  <link rel="canonical" href="https://YOUR-GITHUB-USERNAME.github.io/support.github.io/tools.html">
+  <meta name="twitter:description" content="Practical, self-paced tools from LoneStar Support—a breathing rhythm guide, an interactive feelings wheel, and a printable belief-agreement generator for couples and families.">
+  <meta name="twitter:image" content="https://lonestarsupport.org/assets/images/og/tools-feelings-wheel.jpg">
+  <link rel="canonical" href="https://lonestarsupport.org/tools.html">
 
   <link rel="stylesheet" href="css/site.css">
   <script src="https://cdn.tailwindcss.com"></script>
@@ -44,17 +44,6 @@
       },
     };
   </script>
-
-  <!-- Google Analytics: replace G-XXXXXXXXXX with your measurement ID. -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
 </head>
 <body class="min-h-screen bg-cream text-ink antialiased">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -70,44 +59,82 @@
     </header>
 
     <section class="relative -mt-8 flex flex-col pt-2 pb-12 sm:pb-16">
-      <div class="mx-auto w-full max-w-6xl px-4 pb-4 sm:px-6 lg:px-8">
+      <div class="mx-auto w-full max-w-6xl px-4 pb-6 sm:px-6 lg:px-8">
+        <div role="note" aria-label="Safety notice" class="mb-6 rounded-2xl border border-sage/50 bg-sage/15 p-5 text-sm leading-relaxed text-ink/85 sm:p-6">
+          <p>
+            These tools are educational. They aren&rsquo;t a substitute for medical, legal, or therapeutic care. If you or someone you love is in crisis, call <strong>911</strong> or text/dial <strong>988</strong> (Suicide &amp; Crisis Lifeline, US).
+          </p>
+        </div>
+
         <div
-          class="flex flex-wrap gap-2 border-b border-navy/10 pb-3"
+          class="grid gap-4 md:grid-cols-3"
           role="tablist"
           aria-label="LoneStar Support tools"
         >
           <button
             type="button"
-            class="rounded-full bg-navy px-4 py-2 text-sm font-semibold text-cream shadow-sm transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
             role="tab"
             id="tools-tab-breath"
             aria-selected="true"
             aria-controls="tools-panel-breath"
-            tabindex="0">Breath</button>
+            tabindex="0"
+            class="card-hover rounded-2xl border-2 border-terracotta bg-white p-5 text-left shadow-lg ring-2 ring-terracotta/20 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">
+            <span class="block font-serif text-xl font-semibold text-navy">Breath</span>
+            <p class="mt-2 text-sm leading-relaxed text-ink/75">A guided breathing rhythm&mdash;pick box breathing, 4-7-8, or build your own.</p>
+            <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-terracotta">When the day feels loud</p>
+          </button>
           <button
             type="button"
-            class="rounded-full bg-white px-4 py-2 text-sm font-semibold text-ink/70 ring-1 ring-navy/15 transition hover:bg-sage/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta"
             role="tab"
             id="tools-tab-feelings"
             aria-selected="false"
             aria-controls="tools-panel-feelings"
-            tabindex="-1">Feelings wheel</button>
+            tabindex="-1"
+            class="card-hover rounded-2xl border border-navy/10 bg-white p-5 text-left shadow-sm transition hover:border-sage hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">
+            <span class="block font-serif text-xl font-semibold text-navy">Feelings wheel</span>
+            <p class="mt-2 text-sm leading-relaxed text-ink/75">A spinnable wheel to help name what you're feeling, layer by layer.</p>
+            <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-terracotta">When words feel just out of reach</p>
+          </button>
+          <button
+            type="button"
+            role="tab"
+            id="tools-tab-agree"
+            aria-selected="false"
+            aria-controls="tools-panel-agree"
+            tabindex="-1"
+            class="card-hover rounded-2xl border border-navy/10 bg-white p-5 text-left shadow-sm transition hover:border-sage hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">
+            <span class="block font-serif text-xl font-semibold text-navy">Agreements</span>
+            <p class="mt-2 text-sm leading-relaxed text-ink/75">A printable belief-agreement generator&mdash;write what you like, what you don't, and what you agree to. Sign and share.</p>
+            <p class="mt-3 text-xs font-semibold uppercase tracking-wide text-terracotta">For couples and family conversations</p>
+          </button>
         </div>
       </div>
 
-      <div class="w-full bg-cream">
+      <div class="mx-auto w-full max-w-6xl px-4 sm:px-6 lg:px-8">
         <div
           class="w-full"
           id="tools-panel-breath"
           role="tabpanel"
           aria-labelledby="tools-tab-breath"
         >
-          <iframe
-            src="assets/breath/index.html"
-            title="Breathing rhythm circle and templates"
-            class="block min-h-[calc(100vh-14rem)] w-full border-0 md:min-h-[calc(100vh-13rem)]"
-            loading="lazy"
-          ></iframe>
+          <div class="rounded-2xl border border-navy/10 bg-white p-2 shadow-xl ring-1 ring-sage/40">
+            <div class="flex items-center justify-between gap-3 px-3 pb-2 pt-1">
+              <p class="font-serif text-sm font-semibold text-navy">Breath</p>
+              <a
+                href="assets/breath/index.html"
+                target="_blank"
+                rel="noopener"
+                class="text-xs font-semibold uppercase tracking-wide text-terracotta transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">
+                Open in new tab
+              </a>
+            </div>
+            <iframe
+              src="assets/breath/index.html"
+              title="Breathing rhythm circle and templates"
+              class="block min-h-[calc(100vh-22rem)] w-full rounded-xl border-0 bg-cream md:min-h-[calc(100vh-20rem)]"
+              loading="lazy"
+            ></iframe>
+          </div>
         </div>
 
         <div
@@ -117,13 +144,66 @@
           aria-labelledby="tools-tab-feelings"
           hidden
         >
-          <iframe
-            src="assets/feelings-wheel/index.html"
-            title="Interactive feelings wheel—drag or scroll to rotate"
-            class="block min-h-[calc(100vh-14rem)] w-full border-0 md:min-h-[calc(100vh-13rem)]"
-            loading="lazy"
-          ></iframe>
+          <div class="rounded-2xl border border-navy/10 bg-white p-2 shadow-xl ring-1 ring-sage/40">
+            <div class="flex items-center justify-between gap-3 px-3 pb-2 pt-1">
+              <p class="font-serif text-sm font-semibold text-navy">Feelings wheel</p>
+              <a
+                href="assets/feelings-wheel/index.html"
+                target="_blank"
+                rel="noopener"
+                class="text-xs font-semibold uppercase tracking-wide text-terracotta transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">
+                Open in new tab
+              </a>
+            </div>
+            <iframe
+              src="assets/feelings-wheel/index.html"
+              title="Interactive feelings wheel—drag or scroll to rotate"
+              class="block min-h-[calc(100vh-22rem)] w-full rounded-xl border-0 bg-cream md:min-h-[calc(100vh-20rem)]"
+              loading="lazy"
+            ></iframe>
+          </div>
         </div>
+
+        <div
+          class="w-full"
+          id="tools-panel-agree"
+          role="tabpanel"
+          aria-labelledby="tools-tab-agree"
+          hidden
+        >
+          <div class="rounded-2xl border border-navy/10 bg-white p-2 shadow-xl ring-1 ring-sage/40">
+            <div class="flex items-center justify-between gap-3 px-3 pb-2 pt-1">
+              <p class="font-serif text-sm font-semibold text-navy">Agreements</p>
+              <a
+                href="assets/agree4me/index.html"
+                target="_blank"
+                rel="noopener"
+                class="text-xs font-semibold uppercase tracking-wide text-terracotta transition hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">
+                Open in new tab
+              </a>
+            </div>
+            <iframe
+              src="assets/agree4me/index.html"
+              title="Belief agreement generator: write what you like, what you don't, and what you agree to, then sign and share"
+              class="block min-h-[calc(100vh-22rem)] w-full rounded-xl border-0 bg-cream md:min-h-[calc(100vh-20rem)]"
+              loading="lazy"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+
+      <div class="mx-auto mt-10 w-full max-w-4xl px-4 sm:px-6 lg:px-8">
+        <aside class="rounded-2xl border border-sage/40 bg-white p-6 shadow-sm sm:flex sm:items-center sm:justify-between sm:gap-6">
+          <div>
+            <p class="font-serif text-lg font-semibold text-navy">Want to talk through what came up?</p>
+            <p class="mt-1 text-sm leading-relaxed text-ink/75">These tools work best alongside a real conversation. A LoneStar Support coach can help you sit with what you noticed and decide what to do next.</p>
+          </div>
+          <a
+            href="contact.html"
+            class="mt-4 inline-flex shrink-0 items-center justify-center rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-terracotta/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta sm:mt-0">
+            Connect with a coach
+          </a>
+        </aside>
       </div>
     </section>
   </main>
@@ -133,19 +213,21 @@
   <script src="assets/js/includes.js" defer></script>
   <script>
     (function () {
-      var order = ['breath', 'feelings'];
+      var order = ['breath', 'feelings', 'agree'];
       var tabs = [
         document.getElementById('tools-tab-breath'),
-        document.getElementById('tools-tab-feelings')
+        document.getElementById('tools-tab-feelings'),
+        document.getElementById('tools-tab-agree')
       ];
       var panels = {
         breath: document.getElementById('tools-panel-breath'),
-        feelings: document.getElementById('tools-panel-feelings')
+        feelings: document.getElementById('tools-panel-feelings'),
+        agree: document.getElementById('tools-panel-agree')
       };
       var activeClass =
-        'rounded-full bg-navy px-4 py-2 text-sm font-semibold text-cream shadow-sm transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta';
+        'card-hover rounded-2xl border-2 border-terracotta bg-white p-5 text-left shadow-lg ring-2 ring-terracotta/20 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta';
       var inactiveClass =
-        'rounded-full bg-white px-4 py-2 text-sm font-semibold text-ink/70 ring-1 ring-navy/15 transition hover:bg-sage/25 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta';
+        'card-hover rounded-2xl border border-navy/10 bg-white p-5 text-left shadow-sm transition hover:border-sage hover:shadow-md focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta';
 
       function select(id) {
         order.forEach(function (key, i) {

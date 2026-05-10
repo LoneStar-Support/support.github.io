@@ -10,9 +10,10 @@
   <meta property="og:title" content="About — LoneStar Support">
   <meta property="og:description" content="A volunteer-powered coaching model built for real life—and real relationships.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://YOUR-GITHUB-USERNAME.github.io/support.github.io/about.html">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80&auto=format&fit=crop">
-  <meta property="og:image:alt" content="A group of friends seated outdoors, smiling together.">
+  <meta property="og:url" content="https://lonestarsupport.org/about.html">
+  <link rel="canonical" href="https://lonestarsupport.org/about.html">
+  <meta property="og:image" content="https://lonestarsupport.org/assets/images/autism-hugging/autism-hugging-7.jpg">
+  <meta property="og:image:alt" content="A mother and father looking warmly at their young son, who wears noise-reducing headphones and holds a small fidget spinner, in a sunlit backyard.">
   <meta name="twitter:card" content="summary_large_image">
 
   <link rel="stylesheet" href="css/site.css">
@@ -36,17 +37,6 @@
       },
     };
   </script>
-
-  <!-- Google Analytics: replace G-XXXXXXXXXX with your measurement ID. -->
-  <!--
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX');
-  </script>
-  -->
 </head>
 <body class="min-h-screen bg-cream text-ink antialiased">
   <a class="skip-link" href="#main-content">Skip to main content</a>
@@ -64,16 +54,17 @@
 
     <section class="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
       <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
-        <div class="overflow-hidden rounded-2xl ring-1 ring-navy/10 shadow-md">
-          <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=1200&q=80&auto=format&fit=crop" width="1200" height="900" alt="Three adults seated outdoors, laughing together in warm daylight." class="h-full w-full object-cover" fetchpriority="high" decoding="async">
+        <div class="aspect-[4/3] overflow-hidden rounded-2xl ring-1 ring-navy/10 shadow-md">
+          <img src="assets/images/autism-hugging/autism-hugging-7.jpg" width="784" height="1168" alt="A mother and father looking warmly at their young son, who wears noise-reducing headphones and holds a small fidget spinner, in a sunlit backyard." class="h-full w-full object-cover" fetchpriority="high" decoding="async">
         </div>
         <div>
           <h2 class="font-serif text-3xl font-semibold text-navy">Who we are</h2>
           <p class="mt-4 text-ink/80">LoneStar Support maintains a statewide network of volunteers who are trained as relationship coaches—not therapists, not case managers, but steady partners in conversation. We exist for parents and caregivers who are doing complex, beautiful work and still long to feel close to the person beside them.</p>
           <p class="mt-4 text-ink/80">Our model is collaborative: you bring your story; we bring tools, encouragement, and a calm place to sort through what’s hardest to say.</p>
-          <div class="mt-6 rounded-2xl border border-sage/35 bg-white p-6 shadow-sm">
+          <!-- TODO(EIN): once issued, remove the `hidden` attribute on the card below and replace "TBD". -->
+          <div class="mt-6 rounded-2xl border border-sage/35 bg-white p-6 shadow-sm" hidden>
             <h3 class="text-sm font-semibold uppercase tracking-wide text-terracotta">501(c)(3) transparency</h3>
-            <p class="mt-2 text-sm text-ink/75"><abbr title="Employer Identification Number">EIN</abbr>:</p>
+            <p class="mt-2 text-sm text-ink/75"><abbr title="Employer Identification Number">EIN</abbr>: <span data-pending-ein>TBD</span></p>
           </div>
         </div>
       </div>

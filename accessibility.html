@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Accessibility — LoneStar Support</title>
+  <meta name="description" content="LoneStar Support's accessibility commitment, target conformance, known limitations, and how to report barriers or request alternative formats.">
+  <meta name="theme-color" content="#001F3F">
+
+  <meta property="og:title" content="Accessibility — LoneStar Support">
+  <meta property="og:description" content="LoneStar Support's accessibility commitment, target conformance, and how to report barriers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://lonestarsupport.org/accessibility.html">
+  <link rel="canonical" href="https://lonestarsupport.org/accessibility.html">
+  <meta property="og:image" content="https://lonestarsupport.org/assets/images/autism-hugging/autism-hugging-7.jpg">
+  <meta property="og:image:alt" content="A mother and father looking warmly at their young son, who wears noise-reducing headphones and holds a small fidget spinner, in a sunlit backyard.">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="css/site.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: "#001F3F",
+            sage: "#A8CABA",
+            terracotta: "#C8102E",
+            cream: "#F8F1E9",
+            ink: "#1F2937",
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Times New Roman', 'Times', 'serif'],
+            sans: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="min-h-screen bg-cream text-ink antialiased">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="site-nav" aria-busy="true"></div>
+
+  <main id="main-content">
+    <header class="bg-navy pb-12 pt-12 text-cream sm:pt-16">
+      <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+        <p class="text-sm font-semibold uppercase tracking-wide text-sage">Legal</p>
+        <h1 class="mt-4 font-serif text-4xl font-semibold leading-tight sm:text-5xl">Accessibility</h1>
+        <p class="mt-4 text-sm text-cream/75"><strong>Last updated:</strong> May 9, 2026</p>
+      </div>
+    </header>
+
+    <article class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+      <p class="text-ink/85">
+        LoneStar Support is committed to making this website usable by as many people as possible, including caregivers and visitors who use assistive technology. We design with care for keyboard users, screen-reader users, and people who need larger text, captions, or reduced motion.
+      </p>
+
+      <h2 class="mt-10 font-serif text-2xl font-semibold text-navy">Conformance target</h2>
+      <p class="mt-3 text-ink/85">
+        We aim to meet <a class="font-semibold text-terracotta underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener noreferrer">Web Content Accessibility Guidelines (WCAG) 2.2 Level AA</a>. We use semantic HTML, descriptive link text, alt text on meaningful images, visible focus states, and color contrast that meets or exceeds the AA threshold for body copy.
+      </p>
+
+      <h2 class="mt-10 font-serif text-2xl font-semibold text-navy">What we&rsquo;ve done</h2>
+      <ul class="mt-3 list-disc space-y-2 pl-6 text-ink/85">
+        <li>A &ldquo;Skip to main content&rdquo; link at the top of every page so keyboard and screen-reader users can bypass the navigation.</li>
+        <li>Landmark roles (<code>banner</code>, <code>main</code>, <code>contentinfo</code>) so assistive tech can navigate by region.</li>
+        <li>Visible focus rings on links, buttons, and form fields.</li>
+        <li>Form labels associated with their inputs, and required fields marked with <code>aria-required</code>.</li>
+        <li>Decorative images marked <code>aria-hidden</code> and meaningful images given descriptive alt text.</li>
+        <li>A color palette tested for AA contrast on body copy.</li>
+      </ul>
+
+      <h2 class="mt-10 font-serif text-2xl font-semibold text-navy">Known limitations</h2>
+      <p class="mt-3 text-ink/85">
+        We are honest about where we still have work to do:
+      </p>
+      <ul class="mt-3 list-disc space-y-2 pl-6 text-ink/85">
+        <li>The three embedded tools on our <a class="font-semibold text-terracotta underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" href="tools.html">Tools page</a> (a breathing rhythm guide, a feelings wheel, and a printable belief-agreement generator) are adapted from third-party open-source projects. They have not been independently audited for WCAG 2.2 AA, and some interactions (for example, the spinnable feelings wheel) may not be fully equivalent for users of every assistive technology. We will keep improving these and welcome reports.</li>
+        <li>Some visual decorative elements rely on motion. If you prefer reduced motion, your operating system&rsquo;s <em>Reduce motion</em> setting is honored where possible.</li>
+        <li>This site uses Tailwind CSS via CDN. If you experience styling issues with browser extensions that block third-party CDNs, contact us and we&rsquo;ll help.</li>
+      </ul>
+
+      <h2 class="mt-10 font-serif text-2xl font-semibold text-navy">Reporting an issue or requesting an alternative format</h2>
+      <p class="mt-3 text-ink/85">
+        If you encounter an accessibility barrier on this site, or if you would like content provided in an alternative format (large print, plain text, audio), please email <a class="font-semibold text-terracotta underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" href="mailto:help@lonestarsupport.org">help@lonestarsupport.org</a> with:
+      </p>
+      <ul class="mt-3 list-disc space-y-2 pl-6 text-ink/85">
+        <li>The page or feature you were trying to use (a URL helps).</li>
+        <li>What happened and what you expected to happen.</li>
+        <li>The assistive technology, browser, or operating system you are using, if you are comfortable sharing.</li>
+      </ul>
+      <p class="mt-3 text-ink/85">
+        We aim to respond within five business days and to fix priority issues within thirty days where feasible.
+      </p>
+
+      <h2 class="mt-10 font-serif text-2xl font-semibold text-navy">Contact</h2>
+      <p class="mt-3 text-ink/85">
+        Questions, suggestions, or requests? Email <a class="font-semibold text-terracotta underline-offset-4 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" href="mailto:help@lonestarsupport.org">help@lonestarsupport.org</a>.
+      </p>
+    </article>
+  </main>
+
+  <div id="site-footer" aria-busy="true"></div>
+
+  <script src="assets/js/includes.js" defer></script>
+</body>
+</html>
