@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Map — Enneagram personality — LoneStar Support</title>
+  <meta name="description" content="A free, self-paced Enneagram reflection from LoneStar Support. Slide through paired statements and see a nine-point map of your personality tendencies. Educational, private, and not a diagnosis.">
+  <meta name="theme-color" content="#001F3F">
+
+  <meta property="og:title" content="Map — Enneagram personality — LoneStar Support">
+  <meta property="og:description" content="Slide through paired statements and see a nine-point map of your personality tendencies. Educational, private, and not a diagnosis.">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="LoneStar Support">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:url" content="https://lonestarsupport.org/map.html">
+  <link rel="canonical" href="https://lonestarsupport.org/map.html">
+  <meta property="og:image" content="https://lonestarsupport.org/assets/images/og/tools-feelings-wheel.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="A nine-point map of personality tendencies.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Map — Enneagram personality — LoneStar Support">
+  <meta name="twitter:description" content="A self-paced Enneagram reflection with a nine-point personality map. Educational and private.">
+  <meta name="twitter:image" content="https://lonestarsupport.org/assets/images/og/tools-feelings-wheel.jpg">
+
+  <link rel="stylesheet" href="css/site.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: "#001F3F",
+            sage: "#A8CABA",
+            terracotta: "#C8102E",
+            cream: "#F8F1E9",
+            ink: "#1F2937",
+          },
+          fontFamily: {
+            serif: ['Georgia', 'Times New Roman', 'Times', 'serif'],
+            sans: ['ui-sans-serif', 'system-ui', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'Arial', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+</head>
+<body class="min-h-screen bg-cream text-ink antialiased">
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <div id="site-nav" aria-busy="true"></div>
+
+  <main id="main-content">
+    <header class="bg-navy pb-14 pt-12 text-cream sm:pt-16">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+        <p class="text-sm font-semibold uppercase tracking-wide text-sage">A map of personality</p>
+        <h1 class="mt-4 max-w-3xl text-center font-serif text-4xl font-semibold leading-tight sm:text-5xl sm:text-left">Map your Enneagram pattern</h1>
+        <p class="mt-5 max-w-2xl text-lg leading-relaxed text-cream/85">A self-paced reflection: for each pair, slide toward the phrase that feels more like you&mdash;or leave it in the middle. There are no right answers. <strong class="font-semibold text-cream">This is an educational reflection, not a diagnosis.</strong></p>
+      </div>
+    </header>
+
+    <section class="pb-28 pt-10 sm:pb-32 sm:pt-12">
+      <div class="mx-auto w-full max-w-3xl px-4 sm:px-6 lg:px-8">
+
+        <div role="note" aria-label="About this quiz" class="mb-6 rounded-2xl border border-sage/50 bg-sage/15 p-5 text-sm leading-relaxed text-ink/85 sm:p-6">
+          <p>
+            This quiz is <strong>educational and reflective&mdash;not a psychological assessment, diagnosis, or therapy</strong>. The Enneagram is a self-discovery framework. Nothing here is saved to a server or sent anywhere; your answers stay in your browser. If you or someone you love is in crisis, call <strong>911</strong> or text/dial <strong>988</strong> (Suicide &amp; Crisis Lifeline, US).
+          </p>
+        </div>
+
+        <section aria-labelledby="map-howto-heading" class="mb-10 rounded-2xl border border-navy/10 bg-white p-6 shadow-sm">
+          <h2 id="map-howto-heading" class="font-serif text-xl font-semibold text-navy">How it works</h2>
+          <ol class="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed text-ink/80">
+            <li>Each row offers two phrases. Drag the slider toward the one that feels more like you&mdash;or leave it centered if both fit equally.</li>
+            <li>Use your mouse, touch, or arrow keys. Every slider starts neutral, so answer only the ones that resonate.</li>
+            <li>When you&rsquo;re ready, choose <strong>See my results</strong> for a nine-point map of your tendencies.</li>
+          </ol>
+        </section>
+
+        <form id="map-quiz" novalidate>
+          <noscript>
+            <p class="rounded-2xl border border-terracotta/30 bg-terracotta/10 p-5 text-sm text-ink/80">This quiz needs JavaScript to run. Please enable JavaScript, or <a class="font-semibold text-terracotta underline-offset-4 hover:underline" href="contact.html">contact us</a> and we&rsquo;ll walk through it with you.</p>
+          </noscript>
+        </form>
+
+        <section id="map-results" hidden tabindex="-1" aria-labelledby="map-results-heading"
+          class="mt-12 scroll-mt-24 rounded-2xl border-2 border-terracotta/30 bg-white p-6 shadow-xl ring-1 ring-sage/40 sm:p-8">
+          <h2 id="map-results-heading" class="text-center font-serif text-2xl font-semibold text-navy sm:text-3xl">Your Enneagram map</h2>
+          <p class="mt-2 text-center text-sm leading-relaxed text-ink/75">A reflection of where your answers leaned&mdash;not a label. Most people are a blend of several types.</p>
+
+          <div class="mt-6 grid gap-8 md:grid-cols-2 md:items-center">
+            <figure class="m-0">
+              <div id="map-radar-wrap" class="mx-auto max-w-sm"><!-- radar SVG injected here --></div>
+              <figcaption class="mt-3 text-center text-xs text-ink/60">Each point shows how strongly your answers leaned toward that type.</figcaption>
+              <ul id="map-axis-legend" class="mx-auto mt-4 grid max-w-sm grid-cols-2 gap-x-6 gap-y-1 text-xs sm:grid-cols-3"><!-- number → phrase key --></ul>
+            </figure>
+
+            <div>
+              <h3 class="font-serif text-lg font-semibold text-navy">Strongest patterns</h3>
+              <ol id="map-top-types" class="mt-3 space-y-3"><!-- top types injected here --></ol>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <h3 class="font-serif text-base font-semibold text-navy">All nine scores</h3>
+            <div class="mt-3 overflow-x-auto">
+              <table class="w-full text-left text-sm">
+                <caption class="sr-only">Your score for each of the nine Enneagram types, as a percentage.</caption>
+                <thead>
+                  <tr class="border-b border-navy/15 text-ink/70">
+                    <th scope="col" class="py-2 pr-4 font-semibold">Type</th>
+                    <th scope="col" class="py-2 pr-4 font-semibold">Focus</th>
+                    <th scope="col" class="py-2 font-semibold">Score</th>
+                  </tr>
+                </thead>
+                <tbody id="map-score-table"><!-- rows injected here --></tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="mt-8 flex flex-wrap justify-center gap-3">
+            <button type="button" id="map-retake"
+              class="inline-flex items-center justify-center rounded-full border border-navy/20 bg-white px-5 py-2.5 text-sm font-semibold text-navy shadow-sm transition hover:bg-cream focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">
+              Reset &amp; retake
+            </button>
+            <a href="contact.html" id="map-coach-link"
+              class="inline-flex items-center justify-center rounded-full bg-terracotta px-5 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-terracotta/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta">
+              Talk it through with a coach
+            </a>
+          </div>
+
+        </section>
+
+      </div>
+    </section>
+
+    <div class="fixed inset-x-0 bottom-0 z-40 border-t border-navy/10 bg-cream/95 backdrop-blur-md">
+      <div class="mx-auto flex max-w-3xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
+        <p id="map-progress" class="text-sm font-medium text-ink/80" aria-live="polite" aria-atomic="true">
+          Adjusted <strong class="text-navy">0</strong> of <span data-total>0</span>
+        </p>
+        <button type="button" id="map-submit" form="map-quiz"
+          class="inline-flex shrink-0 items-center justify-center rounded-full bg-terracotta px-6 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-terracotta/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">
+          See my results
+        </button>
+      </div>
+    </div>
+  </main>
+
+  <div id="site-footer" aria-busy="true"></div>
+
+  <script src="assets/js/includes.js" defer></script>
+  <script src="assets/enneagram/questions.js"></script>
+  <script src="assets/enneagram/quiz.js"></script>
+</body>
+</html>

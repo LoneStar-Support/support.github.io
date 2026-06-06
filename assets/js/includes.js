@@ -47,7 +47,7 @@
     }
     el.classList.add("is-loading");
     el.setAttribute("aria-busy", "true");
-    return fetch(url, { credentials: "same-origin" })
+    return fetch(url, { credentials: "same-origin", cache: "no-cache" })
       .then(function (res) {
         if (!res.ok) {
           throw new Error("HTTP " + res.status);

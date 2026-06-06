@@ -1,0 +1,14 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "support-site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-c",
+        "import http.server,socketserver\nclass H(http.server.SimpleHTTPRequestHandler):\n    def end_headers(self):\n        self.send_header('Cache-Control','no-store, must-revalidate')\n        self.send_header('Expires','0')\n        http.server.SimpleHTTPRequestHandler.end_headers(self)\nsocketserver.TCPServer.allow_reuse_address=True\nsocketserver.TCPServer(('',8011),H).serve_forever()"
+      ],
+      "port": 8011
+    }
+  ]
+}

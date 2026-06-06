@@ -73,11 +73,29 @@
       <div class="grid gap-10 lg:grid-cols-2 lg:items-start">
         <div>
           <h2 id="donate-form-title" class="text-center font-serif text-3xl font-semibold text-navy">Give online</h2>
-          <!-- TODO(donate-embed): replace the placeholder inside #donation-embed-region with the real Stripe Checkout embed (script + iframe or hosted-button snippet). -->
-          <div class="mt-8 rounded-2xl border-2 border-dashed border-navy/20 bg-white p-6 shadow-sm">
-            <div id="donation-embed-region" class="rounded-xl bg-cream p-8 text-center text-sm text-ink/70" role="region" aria-label="Donation form embed">
-              <p class="font-semibold text-navy">Stripe Donation form</p>
+          <div id="donation-embed-region" class="mt-8 rounded-2xl border border-navy/10 bg-white p-6 shadow-sm" role="region" aria-label="Donation form">
+            <!-- Frequency toggle -->
+            <div class="grid grid-cols-2 gap-2 rounded-full bg-cream p-1" role="group" aria-label="Donation frequency">
+              <button type="button" data-freq="once" class="rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy bg-white text-navy shadow-sm" aria-pressed="true">One-time</button>
+              <button type="button" data-freq="monthly" class="rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy text-ink/70 hover:text-navy" aria-pressed="false">Monthly</button>
             </div>
+
+            <!-- Amount grid -->
+            <div id="donate-amount-grid" class="mt-4 grid grid-cols-3 gap-3">
+              <button type="button" data-amount="25" class="rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm font-semibold text-navy transition hover:border-sage hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" aria-pressed="false">$25</button>
+              <button type="button" data-amount="50" class="rounded-xl border-2 border-terracotta bg-terracotta/10 px-4 py-3 text-sm font-semibold text-navy shadow-sm ring-2 ring-terracotta/20 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" aria-pressed="true">$50</button>
+              <button type="button" data-amount="100" class="rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm font-semibold text-navy transition hover:border-sage hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" aria-pressed="false">$100</button>
+              <button type="button" data-amount="250" class="rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm font-semibold text-navy transition hover:border-sage hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" aria-pressed="false">$250</button>
+              <button type="button" data-amount="500" class="rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm font-semibold text-navy transition hover:border-sage hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" aria-pressed="false">$500</button>
+              <button type="button" id="donate-flex-btn" data-amount="custom" class="rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm font-semibold text-navy transition hover:border-sage hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta" aria-pressed="false">More</button>
+            </div>
+
+            <!-- CTA -->
+            <button type="button" id="donate-cta" class="mt-5 w-full rounded-full bg-terracotta px-6 py-3 text-sm font-semibold text-white shadow-sm transition hover:bg-terracotta/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy">
+              Donate <span id="donate-amount-label">$50</span><span id="donate-freq-label"></span>
+            </button>
+
+            <p class="mt-3 text-center text-xs text-ink/60">Secure processing via Stripe · Tax receipt provided · Test mode</p>
           </div>
 
           <aside class="mt-6 rounded-2xl border border-navy/10 bg-white p-5 text-sm leading-relaxed text-ink/75 shadow-sm" aria-label="Donation disclosures">
@@ -209,5 +227,122 @@
   <div id="site-footer" aria-busy="true"></div>
 
   <script src="assets/js/includes.js" defer></script>
+  <script>
+    (function () {
+      var region = document.getElementById('donation-embed-region');
+      if (!region) return;
+
+      /* Stripe Payment Links (TEST mode — "Lone Star Healing" account/EIN) */
+      var PAYMENT_LINKS = {
+        once: {
+          25:     'https://buy.stripe.com/test_eVqdRa5KK5B09YK7Yf7Vm0b',
+          50:     'https://buy.stripe.com/test_eVqaEYehg4wWc6S7Yf7Vm0c',
+          100:    'https://buy.stripe.com/test_8x200kflke7w4Eqdiz7Vm0d',
+          250:    'https://buy.stripe.com/test_14A9AU5KK2oO1secev7Vm0e',
+          500:    'https://buy.stripe.com/test_8x2fZi4GG3sS4Eq0vN7Vm0f',
+          custom: 'https://buy.stripe.com/test_fZufZi4GG0gGdaWcev7Vm0m'
+        },
+        monthly: {
+          25:     'https://buy.stripe.com/test_dRm28sb548Nc4EqemD7Vm0g',
+          50:     'https://buy.stripe.com/test_eVqcN68WWe7wdaW5Q77Vm0h',
+          100:    'https://buy.stripe.com/test_5kQeVegpod3sc6S1zR7Vm0i',
+          250:    'https://buy.stripe.com/test_7sYfZi3CCfbA9YK3HZ7Vm0j',
+          500:    'https://buy.stripe.com/test_cNi9AU4GG7J83Am6Ub7Vm0k',
+          1000:   'https://buy.stripe.com/test_fZu6oIehge7w0oa3HZ7Vm0l'
+        }
+      };
+
+      var amtActiveClass =
+        'rounded-xl border-2 border-terracotta bg-terracotta/10 px-4 py-3 text-sm font-semibold text-navy shadow-sm ring-2 ring-terracotta/20 transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta';
+      var amtInactiveClass =
+        'rounded-xl border border-navy/15 bg-white px-4 py-3 text-sm font-semibold text-navy transition hover:border-sage hover:shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-terracotta';
+      var freqActiveClass =
+        'rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy bg-white text-navy shadow-sm';
+      var freqInactiveClass =
+        'rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-navy text-ink/70 hover:text-navy';
+
+      var amountBtns  = region.querySelectorAll('#donate-amount-grid [data-amount]');
+      var freqBtns    = region.querySelectorAll('[data-freq]');
+      var flexBtn     = document.getElementById('donate-flex-btn');
+      var amountLabel = document.getElementById('donate-amount-label');
+      var freqLabel   = document.getElementById('donate-freq-label');
+      var cta         = document.getElementById('donate-cta');
+
+      var selectedAmount = 50;
+      var selectedFreq = 'once';
+
+      function updateDonateButton() {
+        amountLabel.textContent = '$' + selectedAmount.toLocaleString();
+        freqLabel.textContent = selectedFreq === 'monthly' ? ' / month' : '';
+      }
+
+      function selectAmount(amt) {
+        selectedAmount = amt;
+        amountBtns.forEach(function (b) {
+          var on = b.dataset.amount === String(amt);
+          b.className = on ? amtActiveClass : amtInactiveClass;
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        updateDonateButton();
+      }
+
+      // 6th slot flexes: "More" (one-time choose-your-amount) vs fixed "$1,000"
+      // monthly tier (Stripe can't do a custom recurring amount).
+      function syncFlexButton(freq) {
+        if (freq === 'monthly') {
+          flexBtn.textContent = '$1,000';
+          flexBtn.dataset.amount = '1000';
+        } else {
+          flexBtn.textContent = 'More';
+          flexBtn.dataset.amount = 'custom';
+        }
+        if (!(PAYMENT_LINKS[freq] || {})[selectedAmount]) {
+          selectAmount(50);
+        } else {
+          selectAmount(selectedAmount); // re-skin flex button for new data-amount
+        }
+      }
+
+      amountBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          if (btn.dataset.amount === 'custom') {
+            var url = (PAYMENT_LINKS.once || {}).custom;
+            if (!url) {
+              alert('Custom amounts aren’t available right now — please choose a preset amount.');
+              return;
+            }
+            window.location.href = url;
+            return;
+          }
+          selectAmount(parseInt(btn.dataset.amount, 10));
+        });
+      });
+
+      freqBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          selectedFreq = btn.dataset.freq;
+          freqBtns.forEach(function (b) {
+            var on = b === btn;
+            b.className = on ? freqActiveClass : freqInactiveClass;
+            b.setAttribute('aria-pressed', on ? 'true' : 'false');
+          });
+          syncFlexButton(selectedFreq);
+          updateDonateButton();
+        });
+      });
+
+      cta.addEventListener('click', function () {
+        var url = (PAYMENT_LINKS[selectedFreq] || {})[selectedAmount];
+        if (!url) {
+          alert('That donation option isn’t set up yet. Please choose a different amount, or email help@lonestarsupport.org.');
+          return;
+        }
+        window.location.href = url;
+      });
+
+      selectAmount(50);
+      updateDonateButton();
+    })();
+  </script>
 </body>
 </html>
